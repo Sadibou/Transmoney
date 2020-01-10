@@ -36,8 +36,8 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
+    * @ORM\Column(name="is_active", type="boolean")
+    */
     private $isActive;
 
     /**
