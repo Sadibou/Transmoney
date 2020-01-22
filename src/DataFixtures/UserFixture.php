@@ -29,11 +29,11 @@ class UserFixture extends Fixture
         $user->setRoles(array("ROLE_".$role->getLibellé()));
         $user->setIsActive(true);
         $user->setProfil($role);
-
         $manager->persist($user);
+
         $manager->flush();
    
-        $manager->flush();
+        
 
     }
 }
