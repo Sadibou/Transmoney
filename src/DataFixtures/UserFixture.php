@@ -31,9 +31,7 @@ class UserFixture extends Fixture
         $user->setProfil($role);
         $manager->persist($user);
 
-        $manager->flush();
    
-        
-
-    }
+        $manager->flush();
+   }
 }
