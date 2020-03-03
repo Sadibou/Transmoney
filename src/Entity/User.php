@@ -24,10 +24,6 @@ class User implements UserInterface
      */
     private $username;
 
-    /**
-     * @ORM\Column(type="json")
-     */
-    private $roles = [];
 
     /**
      * @var string The hashed password
@@ -73,19 +69,13 @@ class User implements UserInterface
      */
     public function getRoles(): array
     {
-        $roles = $this->roles;
+        $roles[] = $this->profil->getLibellé();
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }
 
-    public function setRoles(array $roles): self
-    {
-        $this->roles = $roles;
-
-        return $this;
-    }
 
     /**
      * @see UserInterface
